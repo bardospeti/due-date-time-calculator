@@ -3,11 +3,11 @@ package entities;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class DueDate {
+public class DueDateTime {
 
     private LocalDateTime dueDate;
 
-    public DueDate(LocalDateTime dueDate) {
+    public DueDateTime(LocalDateTime dueDate) {
         Objects.requireNonNull(dueDate, "Due date must not be null!");
         this.dueDate = dueDate;
     }

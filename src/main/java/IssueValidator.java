@@ -12,8 +12,8 @@ public class IssueValidator {
 
     protected boolean validateIssue(Issue issue) {
         Objects.requireNonNull(issue,"Issue must not be null");
-        DueDateCalculator dueDateCalculator = new DueDateCalculator(issue);
-        assert dueDateCalculator.isWorkingTime(issue.getSubmitDateTime()) : "A problem can only be reported during working hours!";
+        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
+        assert dueDateTimeCalculator.isWorkingTime(issue.getSubmitDateTime()) : "A problem can only be reported during working hours!";
         return true;
     }
 }

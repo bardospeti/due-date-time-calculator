@@ -2,11 +2,11 @@ import entities.*;
 import java.time.*;
 import java.util.Objects;
 
-public class DueDateCalculator {
+public class DueDateTimeCalculator {
 
     private Issue issue;
 
-    public DueDateCalculator(Issue issue) {
+    public DueDateTimeCalculator(Issue issue) {
         Objects.requireNonNull(issue,"Issue must not be null");
         this.issue = issue;
     }
@@ -20,7 +20,7 @@ public class DueDateCalculator {
         Objects.requireNonNull(issue,"Issue must not be null");
     }
 
-    protected DueDate calculateDueDate(Issue issue) {
+    protected DueDateTime calculateDueDate(Issue issue) {
         IssueValidator issueValidator = new IssueValidator(issue);
         issueValidator.validateIssue(issue);
         while (issue.getTurnAroundTimeInHours() > WorkingTime.WEEKLY_WORKING_HOURS) {
@@ -34,7 +34,7 @@ public class DueDateCalculator {
         } else {
             setIssueDueTomorrow(issue);
         }
-        return new DueDate(issue.getSubmitDateTime());
+        return new DueDateTime(issue.getSubmitDateTime());
     }
 
     protected boolean isWeekend(LocalDateTime localDateTime) {
@@ -102,17 +102,17 @@ public class DueDateCalculator {
         //System.out.println(issue.getSubmitDateTime().toString());
         //System.out.println(issue.getTurnAroundTimeInHours().toString());
         System.out.println(issue);
-        DueDateCalculator dueDateCalculator = new DueDateCalculator(issue);
-        System.out.println(dueDateCalculator.calculateDueDate(issue));
-        System.out.println(dueDateCalculator.isWeekend(issue.getSubmitDateTime()));
-        System.out.println(dueDateCalculator.isWorkingTime(issue.getSubmitDateTime()));
-        System.out.println(dueDateCalculator.isWorkingTime(LocalDateTime.now()));
+        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
+        System.out.println(dueDateTimeCalculator.calculateDueDate(issue));
+        System.out.println(dueDateTimeCalculator.isWeekend(issue.getSubmitDateTime()));
+        System.out.println(dueDateTimeCalculator.isWorkingTime(issue.getSubmitDateTime()));
+        System.out.println(dueDateTimeCalculator.isWorkingTime(LocalDateTime.now()));
         System.out.println(issue.getSubmitDateTime());
         System.out.println(Duration.between(WorkingTime.START_OF_WORKING_TIME,WorkingTime.END_OF_WORKING_TIME).toMillis());
         System.out.println(Duration.ofMillis(issue.getTurnAroundTimeInMillis()).toMillis());
-        System.out.println(dueDateCalculator.isDueToday(issue));
-        System.out.println(dueDateCalculator.calculateDueDate(issue));
-        System.out.println(dueDateCalculator.calculateSubmitDateTimeOfMorningOfNextWorkday(issue.getSubmitDateTime()));
+        System.out.println(dueDateTimeCalculator.isDueToday(issue));
+        System.out.println(dueDateTimeCalculator.calculateDueDate(issue));
+        System.out.println(dueDateTimeCalculator.calculateSubmitDateTimeOfMorningOfNextWorkday(issue.getSubmitDateTime()));
     }
 
 }
