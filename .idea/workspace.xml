@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="854373e0-bb7e-49b2-afdb-2cee393db195" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DueDateCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/IssueValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/DueDate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Issue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/SubmitDateTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/TurnAroundTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/WorkingTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DueDateCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/IssueValidatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/entities/DueDateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/entities/IssueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/entities/SubmitDateTimeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/entities/TurnAroundTimeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/entities/WorkingTimeTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28LEEsy6J0FceapNZRyUFckQhAX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "preferences.intentionPowerPack"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="entities" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in duedatecalculator">
+    <configuration name="All in duedatecalculator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatecalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DueDateCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatecalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DueDateCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DueDateCalculatorTest.testDueNextWeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatecalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DueDateCalculatorTest" />
+      <option name="METHOD_NAME" value="testDueNextWeek" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DueDateCalculatorTest.testDueToday" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatecalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DueDateCalculatorTest" />
+      <option name="METHOD_NAME" value="testDueToday" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DueDateCalculatorTest.testLongWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatecalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DueDateCalculatorTest" />
+      <option name="METHOD_NAME" value="testLongWork" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in duedatecalculator" />
+        <item itemvalue="JUnit.DueDateCalculatorTest.testLongWork" />
+        <item itemvalue="JUnit.DueDateCalculatorTest" />
+        <item itemvalue="JUnit.DueDateCalculatorTest.testDueNextWeek" />
+        <item itemvalue="JUnit.DueDateCalculatorTest.testDueToday" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="854373e0-bb7e-49b2-afdb-2cee393db195" name="Changes" comment="" />
+      <created>1650987358639</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650987358639</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DueDateCalculator.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
