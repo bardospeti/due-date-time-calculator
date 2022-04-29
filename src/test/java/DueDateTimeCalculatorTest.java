@@ -90,7 +90,7 @@ public class DueDateTimeCalculatorTest {
         submitDateTime = new SubmitDateTime(submitDateTime.getSubmitDateTime().plusHours(2));
         Issue issue = new Issue(submitDateTime, turnAroundTime1);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        AssertionError assertionError = assertThrows(AssertionError.class, () -> dueDateTimeCalculator.calculateDueDate(issue));
+        AssertionError assertionError = assertThrows(AssertionError.class, () -> dueDateTimeCalculator.calculateDueDateTime(issue));
         assertEquals(assertionError.getMessage(),"A problem can only be reported during working hours!");
     }
 
@@ -99,7 +99,7 @@ public class DueDateTimeCalculatorTest {
         Issue issue = new Issue(submitDateTime, turnAroundTime1);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
         assertTrue(dueDateTimeCalculator.isDueToday(issue));
-        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDate(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusHours(1)));
     }
 
@@ -108,7 +108,7 @@ public class DueDateTimeCalculatorTest {
         Issue issue = new Issue(submitDateTime, turnAroundTime2);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
         assertFalse(dueDateTimeCalculator.isDueToday(issue));
-        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDate(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusHours(18)));
     }
 
@@ -117,7 +117,7 @@ public class DueDateTimeCalculatorTest {
         TurnAroundTime turnAroundTime = new TurnAroundTime(25);
         Issue issue = new Issue(submitDateTime, turnAroundTime);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDate(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusDays(3).plusHours(1)));
     }
 
@@ -126,7 +126,7 @@ public class DueDateTimeCalculatorTest {
         TurnAroundTime turnAroundTime = new TurnAroundTime(41);
         Issue issue = new Issue(submitDateTime, turnAroundTime);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDate(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusWeeks(1).plusHours(1)));
     }
 
@@ -135,7 +135,7 @@ public class DueDateTimeCalculatorTest {
         TurnAroundTime turnAroundTime = new TurnAroundTime(97);
         Issue issue = new Issue(submitDateTime, turnAroundTime);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDate(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusWeeks(2).plusDays(2).plusHours(1)));
     }
 
@@ -144,7 +144,7 @@ public class DueDateTimeCalculatorTest {
         TurnAroundTime turnAroundTime = new TurnAroundTime(0.5);
         Issue issue = new Issue(submitDateTime, turnAroundTime);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDate(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusMinutes(30)));
     }
 
@@ -153,7 +153,7 @@ public class DueDateTimeCalculatorTest {
         TurnAroundTime turnAroundTime = new TurnAroundTime(1.0 / 6);
         Issue issue = new Issue(submitDateTime, turnAroundTime);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDate(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusMinutes(10)));
     }
 }
