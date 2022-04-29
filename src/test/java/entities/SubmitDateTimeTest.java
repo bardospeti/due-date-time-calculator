@@ -28,4 +28,11 @@ public class SubmitDateTimeTest {
         Exception exception = assertThrows(NullPointerException.class, () -> new SubmitDateTime(null));
         assertEquals(exception.getMessage(),"Submit date/time must not be null!");
     }
+
+    @Test
+    public void testSetToNull() {
+        SubmitDateTime submitDateTime = new SubmitDateTime(LocalDateTime.of(2022,Month.APRIL,29,13,06));
+        Exception exception = assertThrows(NullPointerException.class, () -> submitDateTime.setSubmitDateTime(null));
+        assertEquals(exception.getMessage(),"Submit date/time must not be null!");
+    }
 }

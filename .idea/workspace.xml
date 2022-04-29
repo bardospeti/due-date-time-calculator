@@ -4,27 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854373e0-bb7e-49b2-afdb-2cee393db195" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DueDateCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/IssueValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/DueDate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Issue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/SubmitDateTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/TurnAroundTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entities/WorkingTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DueDateCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/IssueValidatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/entities/DueDateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/entities/IssueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/entities/SubmitDateTimeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/entities/TurnAroundTimeTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/entities/WorkingTimeTest.java" afterDir="false" />
+    <list default="true" id="854373e0-bb7e-49b2-afdb-2cee393db195" name="Changes" comment="initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DueDateCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DueDateCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IssueValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IssueValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/DueDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/DueDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/SubmitDateTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/SubmitDateTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/TurnAroundTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/TurnAroundTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DueDateCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DueDateCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/IssueValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IssueValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entities/DueDateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/entities/DueDateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entities/IssueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/entities/IssueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entities/SubmitDateTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/entities/SubmitDateTimeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entities/TurnAroundTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/entities/TurnAroundTimeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entities/WorkingTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/entities/WorkingTimeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -86,26 +80,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DueDateCalculatorTest.testDueNextWeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="duedatecalculator" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DueDateCalculatorTest" />
-      <option name="METHOD_NAME" value="testDueNextWeek" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DueDateCalculatorTest.testDueToday" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="duedatecalculator" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DueDateCalculatorTest" />
-      <option name="METHOD_NAME" value="testDueToday" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DueDateCalculatorTest.testLongWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="duedatecalculator" />
       <option name="PACKAGE_NAME" value="" />
@@ -116,13 +90,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SubmitDateTimeTest.testSetToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatecalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="entities" />
+      <option name="MAIN_CLASS_NAME" value="entities.SubmitDateTimeTest" />
+      <option name="METHOD_NAME" value="testSetToNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TurnAroundTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatecalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="entities" />
+      <option name="MAIN_CLASS_NAME" value="entities.TurnAroundTimeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in duedatecalculator" />
+        <item itemvalue="JUnit.TurnAroundTimeTest" />
+        <item itemvalue="JUnit.SubmitDateTimeTest.testSetToNull" />
         <item itemvalue="JUnit.DueDateCalculatorTest.testLongWork" />
         <item itemvalue="JUnit.DueDateCalculatorTest" />
-        <item itemvalue="JUnit.DueDateCalculatorTest.testDueNextWeek" />
-        <item itemvalue="JUnit.DueDateCalculatorTest.testDueToday" />
       </list>
     </recent_temporary>
   </component>
@@ -135,6 +140,14 @@
       <option name="presentableId" value="Default" />
       <updated>1650987358639</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1651226266081</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651226266081</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +161,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -155,11 +172,6 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DueDateCalculator.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

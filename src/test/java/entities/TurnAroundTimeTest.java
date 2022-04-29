@@ -1,7 +1,6 @@
 package entities;
 
 import org.junit.Test;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -26,6 +25,30 @@ public class TurnAroundTimeTest {
     @Test
     public void testCreateNegative() {
         AssertionError assertionError = assertThrows(AssertionError.class, () -> new TurnAroundTime(-1));
+        assertEquals(assertionError.getMessage(),"Turnaround time must be positive!");
+    }
+
+    @Test
+    public void testSetToNegative1() {
+        AssertionError assertionError = assertThrows(AssertionError.class, () -> turnAroundTime.setTurnaroundTimeInHours(-3));
+        assertEquals(assertionError.getMessage(),"Turnaround time must be positive!");
+    }
+
+    @Test
+    public void testSetToNegative2() {
+        AssertionError assertionError = assertThrows(AssertionError.class, () -> turnAroundTime.setTurnaroundTimeInMillis(-60_000_000));
+        assertEquals(assertionError.getMessage(),"Turnaround time must be positive!");
+    }
+
+    @Test
+    public void testSetToZero1() {
+        AssertionError assertionError = assertThrows(AssertionError.class, () -> turnAroundTime.setTurnaroundTimeInHours(0));
+        assertEquals(assertionError.getMessage(),"Turnaround time must be positive!");
+    }
+
+    @Test
+    public void testSetToZero2() {
+        AssertionError assertionError = assertThrows(AssertionError.class, () -> turnAroundTime.setTurnaroundTimeInMillis(0));
         assertEquals(assertionError.getMessage(),"Turnaround time must be positive!");
     }
 

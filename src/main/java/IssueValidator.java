@@ -1,5 +1,4 @@
 import entities.Issue;
-
 import java.util.Objects;
 
 public class IssueValidator {

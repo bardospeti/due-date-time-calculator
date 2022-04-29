@@ -23,10 +23,12 @@ public class TurnAroundTime {
 
     public void setTurnaroundTimeInHours(double turnaroundTimeInHours) {
         this.turnaroundTime = turnaroundTimeInHours;
+        assert !(turnaroundTime <= 0) : "Turnaround time must be positive!";
     }
 
     public void setTurnaroundTimeInMillis(double turnaroundTimeInMillis) {
         this.turnaroundTime = turnaroundTimeInMillis / 3600 / 1000;
+        assert !(turnaroundTime <= 0) : "Turnaround time must be positive!";
     }
 
     @Override

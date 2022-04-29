@@ -17,6 +17,7 @@ public class SubmitDateTime {
     }
 
     public void setSubmitDateTime(LocalDateTime submitDateTime) {
+        Objects.requireNonNull(submitDateTime,"Submit date/time must not be null!");
         this.submitDateTime = submitDateTime;
     }
 

@@ -21,6 +21,7 @@ public class Issue {
     }
 
     public void setSubmitDateTime(SubmitDateTime submitDateTime) {
+        Objects.requireNonNull(submitDateTime,"Submit date/time must not be null!");
         this.submitDateTime = submitDateTime;
     }
 
@@ -36,11 +37,8 @@ public class Issue {
         return turnAroundTime.getTurnaroundTimeInMillis();
     }
 
-    public void setTurnAroundTimeInHours(TurnAroundTime turnAroundTime) {
-        this.turnAroundTime = turnAroundTime;
-    }
-
-    public void setTurnAroundTimeInMillis(TurnAroundTime turnAroundTime) {
+    public void setTurnAroundTime(TurnAroundTime turnAroundTime) {
+        Objects.requireNonNull(turnAroundTime,"Turnaround time must not be null!");
         this.turnAroundTime = turnAroundTime;
     }
 

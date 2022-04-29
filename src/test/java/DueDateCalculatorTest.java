@@ -25,6 +25,20 @@ public class DueDateCalculatorTest {
     }
 
     @Test
+    public void testCreateNull() {
+        Exception exception = assertThrows(NullPointerException.class, () -> new DueDateCalculator(null));
+        assertEquals(exception.getMessage(),"Issue must not be null");
+    }
+
+    @Test
+    public void testSetToNull() {
+        Issue issue = new Issue(submitDateTime, turnAroundTime1);
+        DueDateCalculator dueDateCalculator = new DueDateCalculator(issue);
+        Exception exception = assertThrows(NullPointerException.class, () -> dueDateCalculator.setIssue(null));
+        assertEquals(exception.getMessage(),"Issue must not be null");
+    }
+
+    @Test
     public void testWeekend1() {
         Issue issue = new Issue(submitDateTime, turnAroundTime1);
         DueDateCalculator dueDateCalculator = new DueDateCalculator(issue);

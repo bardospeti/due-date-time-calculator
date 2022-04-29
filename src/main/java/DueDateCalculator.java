@@ -1,12 +1,13 @@
 import entities.*;
-
 import java.time.*;
+import java.util.Objects;
 
 public class DueDateCalculator {
 
     private Issue issue;
 
     public DueDateCalculator(Issue issue) {
+        Objects.requireNonNull(issue,"Issue must not be null");
         this.issue = issue;
     }
 
@@ -16,6 +17,7 @@ public class DueDateCalculator {
 
     public void setIssue(Issue issue) {
         this.issue = issue;
+        Objects.requireNonNull(issue,"Issue must not be null");
     }
 
     protected DueDate calculateDueDate(Issue issue) {
@@ -35,16 +37,6 @@ public class DueDateCalculator {
         return new DueDate(issue.getSubmitDateTime());
     }
 
-    protected Issue setIssueDueTomorrow(Issue issue) {
-        double remainingTurnaroundTimeInMillis = issue.getTurnAroundTimeInMillis();
-        remainingTurnaroundTimeInMillis -= Duration.between(issue.getSubmitDateTime(),
-                LocalDateTime.of(issue.getSubmitDateTime().toLocalDate(),WorkingTime.END_OF_WORKING_TIME)).toMillis();
-        issue.setSubmitDateTime(calculateSubmitDateTimeOfMorningOfNextWorkday(issue.getSubmitDateTime()));
-        double remainingTurnaroundTimeInSeconds = remainingTurnaroundTimeInMillis / 1000;
-        issue.setSubmitDateTime(new SubmitDateTime(issue.getSubmitDateTime().plusSeconds((long) remainingTurnaroundTimeInSeconds)));
-        return issue;
-    }
-
     protected boolean isWeekend(LocalDateTime localDateTime) {
         return localDateTime.getDayOfWeek() == DayOfWeek.SATURDAY ||
                 localDateTime.getDayOfWeek() == DayOfWeek.SUNDAY;
@@ -59,19 +51,21 @@ public class DueDateCalculator {
                 !localTime.isAfter(WorkingTime.END_OF_WORKING_TIME);
     }
 
-//    protected boolean isTurnaroundTimeLongerThanAWorkweek(TurnAroundTime turnAroundTime) {
-//        return turnAroundTime.getTurnaroundTimeInHours() > WorkingTime.WEEKLY_WORKING_HOURS;
-//    }
-//
-//    protected boolean isTurnaroundTimeLongerThanAWorkday(TurnAroundTime turnAroundTime) {
-//        return turnAroundTime.getTurnaroundTimeInHours() > WorkingTime.DAILY_WORKING_HOURS;
-//    }
-
     protected boolean isDueToday(Issue issue) {
         return (issue.getTurnAroundTimeInMillis() <=
                 Duration.between(issue.getSubmitDateTime(),
                         LocalDateTime.of(issue.getSubmitDateTime().toLocalDate(),
                                 WorkingTime.END_OF_WORKING_TIME)).toMillis());
+    }
+
+    protected SubmitDateTime calculateSubmitDateTimeOfMorningOfNextWorkday(LocalDateTime localDateTime) {
+        localDateTime = localDateTime.plusDays(1).withHour(WorkingTime.START_OF_WORKING_TIME.getHour()).
+                withMinute(WorkingTime.START_OF_WORKING_TIME.getMinute());
+        switch (localDateTime.getDayOfWeek()) {
+            case SATURDAY -> localDateTime = localDateTime.plusDays(2);
+            case SUNDAY -> localDateTime = localDateTime.plusDays(1);
+        }
+        return new SubmitDateTime(localDateTime);
     }
 
     protected Issue leapWeek(Issue issue) {
@@ -90,14 +84,14 @@ public class DueDateCalculator {
         return new Issue(new SubmitDateTime(localDateTime), new TurnAroundTime(turnAroundTimeInHours));
     }
 
-    protected SubmitDateTime calculateSubmitDateTimeOfMorningOfNextWorkday(LocalDateTime localDateTime) {
-        localDateTime = localDateTime.plusDays(1).withHour(WorkingTime.START_OF_WORKING_TIME.getHour()).
-                withMinute(WorkingTime.START_OF_WORKING_TIME.getMinute());
-        switch (localDateTime.getDayOfWeek()) {
-            case SATURDAY -> localDateTime = localDateTime.plusDays(2);
-            case SUNDAY -> localDateTime = localDateTime.plusDays(1);
-        }
-        return new SubmitDateTime(localDateTime);
+    protected Issue setIssueDueTomorrow(Issue issue) {
+        double remainingTurnaroundTimeInMillis = issue.getTurnAroundTimeInMillis();
+        remainingTurnaroundTimeInMillis -= Duration.between(issue.getSubmitDateTime(),
+                LocalDateTime.of(issue.getSubmitDateTime().toLocalDate(),WorkingTime.END_OF_WORKING_TIME)).toMillis();
+        issue.setSubmitDateTime(calculateSubmitDateTimeOfMorningOfNextWorkday(issue.getSubmitDateTime()));
+        double remainingTurnaroundTimeInSeconds = remainingTurnaroundTimeInMillis / 1000;
+        issue.setSubmitDateTime(new SubmitDateTime(issue.getSubmitDateTime().plusSeconds((long) remainingTurnaroundTimeInSeconds)));
+        return issue;
     }
 
     public static void main(String[] args) {

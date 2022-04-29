@@ -1,9 +1,7 @@
 package entities;
 
 import org.junit.Test;
-
 import java.time.LocalTime;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 

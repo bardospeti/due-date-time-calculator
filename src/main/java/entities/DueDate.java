@@ -17,6 +17,7 @@ public class DueDate {
     }
 
     public void setDueDate(LocalDateTime dueDate) {
+        Objects.requireNonNull(dueDate, "Due date must not be null!");
         this.dueDate = dueDate;
     }
 

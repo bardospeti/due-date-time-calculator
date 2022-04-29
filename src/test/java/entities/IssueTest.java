@@ -1,10 +1,8 @@
 package entities;
 
 import org.junit.Test;
-
 import java.time.LocalDateTime;
 import java.time.Month;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -35,5 +33,19 @@ public class IssueTest {
     public void testCreateNull2() {
         Exception exception = assertThrows(NullPointerException.class, () -> new Issue(null,turnAroundTime));
         assertEquals(exception.getMessage(),"Submit date/time must not be null!");
+    }
+
+    @Test
+    public void testSetToNull1() {
+        Issue issue = new Issue(submitDateTime, turnAroundTime);
+        Exception exception = assertThrows(NullPointerException.class, () -> issue.setSubmitDateTime(null));
+        assertEquals(exception.getMessage(),"Submit date/time must not be null!");
+    }
+
+    @Test
+    public void testSetToNull2() {
+        Issue issue = new Issue(submitDateTime, turnAroundTime);
+        Exception exception = assertThrows(NullPointerException.class, () -> issue.setTurnAroundTime(null));
+        assertEquals(exception.getMessage(),"Turnaround time must not be null!");
     }
 }
