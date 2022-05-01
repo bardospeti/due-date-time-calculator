@@ -27,7 +27,7 @@ public class DueDateTimeCalculatorTest {
     @Test
     public void testCreateNull() {
         Exception exception = assertThrows(NullPointerException.class, () -> new DueDateTimeCalculator(null));
-        assertEquals(exception.getMessage(),"Issue must not be null");
+        assertEquals(exception.getMessage(),"Issue must not be null!");
     }
 
     @Test
@@ -35,7 +35,7 @@ public class DueDateTimeCalculatorTest {
         Issue issue = new Issue(submitDateTime, turnAroundTime1);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
         Exception exception = assertThrows(NullPointerException.class, () -> dueDateTimeCalculator.setIssue(null));
-        assertEquals(exception.getMessage(),"Issue must not be null");
+        assertEquals(exception.getMessage(),"Issue must not be null!");
     }
 
     @Test
