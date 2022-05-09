@@ -20,9 +20,15 @@ public class DueDateTimeCalculator {
         Objects.requireNonNull(issue,"Issue must not be null!");
     }
 
+    protected boolean validateIssue(Issue issue) {
+        Objects.requireNonNull(issue,"Issue must not be null");
+        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
+        assert dueDateTimeCalculator.isWorkingTime(issue.getSubmitDateTime()) : "A problem can only be reported during working hours!";
+        return true;
+    }
+
     protected DueDateTime calculateDueDateTime(Issue issue) {
-        IssueValidator issueValidator = new IssueValidator(issue);
-        issueValidator.validateIssue(issue);
+        validateIssue(issue);
         while (issue.getTurnAroundTimeInHours() > WorkingTime.WEEKLY_WORKING_HOURS) {
             issue = leapWeek(issue);
         }
