@@ -11,17 +11,17 @@ import static org.junit.Assert.assertThrows;
 public class IssueTest {
 
     SubmitDateTime submitDateTime = new SubmitDateTime(LocalDateTime.of(2022, Month.APRIL,28,16,49));
-    TurnAroundTime turnAroundTime = new TurnAroundTime(1);
+    TurnaroundTime turnaroundTime = new TurnaroundTime(1);
 
     @Test
     public void testCreate() {
-        Issue issue = new Issue(submitDateTime,turnAroundTime);
+        Issue issue = new Issue(submitDateTime, turnaroundTime);
         assertThat(issue.getSubmitDateTime().getYear(),equalTo(2022));
         assertThat(issue.getSubmitDateTime().getMonth(),equalTo(Month.APRIL));
         assertThat(issue.getSubmitDateTime().getDayOfMonth(),equalTo(28));
         assertThat(issue.getSubmitDateTime().getHour(),equalTo(16));
         assertThat(issue.getSubmitDateTime().getMinute(),equalTo(49));
-        assertThat(issue.getTurnAroundTimeInHours(),equalTo(1.0));
+        assertThat(issue.getTurnaroundTimeInHours(),equalTo(1.0));
     }
 
     @Test
@@ -31,21 +31,21 @@ public class IssueTest {
     }
     @Test
     public void testCreateNull2() {
-        Exception exception = assertThrows(NullPointerException.class, () -> new Issue(null,turnAroundTime));
+        Exception exception = assertThrows(NullPointerException.class, () -> new Issue(null, turnaroundTime));
         assertEquals(exception.getMessage(),"Submit date/time must not be null!");
     }
 
     @Test
     public void testSetToNull1() {
-        Issue issue = new Issue(submitDateTime, turnAroundTime);
+        Issue issue = new Issue(submitDateTime, turnaroundTime);
         Exception exception = assertThrows(NullPointerException.class, () -> issue.setSubmitDateTime(null));
         assertEquals(exception.getMessage(),"Submit date/time must not be null!");
     }
 
     @Test
     public void testSetToNull2() {
-        Issue issue = new Issue(submitDateTime, turnAroundTime);
-        Exception exception = assertThrows(NullPointerException.class, () -> issue.setTurnAroundTime(null));
+        Issue issue = new Issue(submitDateTime, turnaroundTime);
+        Exception exception = assertThrows(NullPointerException.class, () -> issue.setTurnaroundTime(null));
         assertEquals(exception.getMessage(),"Turnaround time must not be null!");
     }
 }

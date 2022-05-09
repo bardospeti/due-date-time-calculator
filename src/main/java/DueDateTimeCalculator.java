@@ -28,14 +28,14 @@ public class DueDateTimeCalculator {
 
     protected DueDateTime calculateDueDateTime(Issue issue) {
         validateIssue(issue);
-        while (issue.getTurnAroundTimeInHours() > WorkingTime.WEEKLY_WORKING_HOURS) {
+        while (issue.getTurnaroundTimeInHours() > WorkingTime.WEEKLY_WORKING_HOURS) {
             issue = leapWeek(issue);
         }
-        while (issue.getTurnAroundTimeInHours() > WorkingTime.DAILY_WORKING_HOURS) {
+        while (issue.getTurnaroundTimeInHours() > WorkingTime.DAILY_WORKING_HOURS) {
             issue = leapDay(issue);
         }
         if (isDueToday(issue)) {
-            issue.setSubmitDateTime(new SubmitDateTime(issue.getSubmitDateTime().plusSeconds(issue.getTurnAroundTimeInSeconds())));
+            issue.setSubmitDateTime(new SubmitDateTime(issue.getSubmitDateTime().plusSeconds(issue.getTurnaroundTimeInSeconds())));
         } else {
             setIssueDueTomorrow(issue);
         }
@@ -57,7 +57,7 @@ public class DueDateTimeCalculator {
     }
 
     private boolean isDueToday(Issue issue) {
-        return (issue.getTurnAroundTimeInMillis() <=
+        return (issue.getTurnaroundTimeInMillis() <=
                 Duration.between(issue.getSubmitDateTime(),
                         LocalDateTime.of(issue.getSubmitDateTime().toLocalDate(),
                                 WorkingTime.END_OF_WORKING_TIME)).toMillis());
@@ -75,29 +75,29 @@ public class DueDateTimeCalculator {
 
     private Issue leapWeek(Issue issue) {
         LocalDateTime localDateTime = issue.getSubmitDateTime();
-        double turnAroundTimeInHours = issue.getTurnAroundTimeInHours();
+        double turnaroundTimeInHours = issue.getTurnaroundTimeInHours();
         localDateTime = localDateTime.plusWeeks(1);
-        turnAroundTimeInHours -= WorkingTime.WEEKLY_WORKING_HOURS;
+        turnaroundTimeInHours -= WorkingTime.WEEKLY_WORKING_HOURS;
         issue.setSubmitDateTime(new SubmitDateTime(localDateTime));
-        issue.setTurnAroundTime(new TurnAroundTime(turnAroundTimeInHours));
+        issue.setTurnaroundTime(new TurnaroundTime(turnaroundTimeInHours));
         return issue;
     }
 
     private Issue leapDay(Issue issue) {
         LocalDateTime localDateTime = issue.getSubmitDateTime();
-        double turnAroundTimeInHours = issue.getTurnAroundTimeInHours();
+        double turnaroundTimeInHours = issue.getTurnaroundTimeInHours();
         localDateTime = localDateTime.plusDays(1);
         while (isWeekend(localDateTime)) {
             localDateTime = localDateTime.plusDays(1);
         }
-        turnAroundTimeInHours -= WorkingTime.DAILY_WORKING_HOURS;
+        turnaroundTimeInHours -= WorkingTime.DAILY_WORKING_HOURS;
         issue.setSubmitDateTime(new SubmitDateTime(localDateTime));
-        issue.setTurnAroundTime(new TurnAroundTime(turnAroundTimeInHours));
+        issue.setTurnaroundTime(new TurnaroundTime(turnaroundTimeInHours));
         return issue;
     }
 
     private Issue setIssueDueTomorrow(Issue issue) {
-        double remainingTurnaroundTimeInMillis = issue.getTurnAroundTimeInMillis();
+        double remainingTurnaroundTimeInMillis = issue.getTurnaroundTimeInMillis();
         remainingTurnaroundTimeInMillis -= Duration.between(issue.getSubmitDateTime(),
                 LocalDateTime.of(issue.getSubmitDateTime().toLocalDate(),WorkingTime.END_OF_WORKING_TIME)).toMillis();
         issue.setSubmitDateTime(calculateSubmitDateTimeOfMorningOfNextWorkday(issue.getSubmitDateTime()));

@@ -1,10 +1,10 @@
 package entities;
 
-public class TurnAroundTime {
+public class TurnaroundTime {
 
     private double turnaroundTime;
 
-    public TurnAroundTime(double turnaroundTime) {
+    public TurnaroundTime(double turnaroundTime) {
         assert !(turnaroundTime <= 0) : "Turnaround time must be positive!";
         this.turnaroundTime = turnaroundTime;
     }

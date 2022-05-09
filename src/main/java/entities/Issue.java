@@ -7,13 +7,13 @@ public class Issue {
 
     private SubmitDateTime submitDateTime;
 
-    private TurnAroundTime turnAroundTime;
+    private TurnaroundTime turnaroundTime;
 
-    public Issue(SubmitDateTime submitDateTime, TurnAroundTime turnAroundTime) {
+    public Issue(SubmitDateTime submitDateTime, TurnaroundTime turnaroundTime) {
         Objects.requireNonNull(submitDateTime,"Submit date/time must not be null!");
-        Objects.requireNonNull(turnAroundTime,"Turnaround time must not be null!");
+        Objects.requireNonNull(turnaroundTime,"Turnaround time must not be null!");
         this.submitDateTime = submitDateTime;
-        this.turnAroundTime = turnAroundTime;
+        this.turnaroundTime = turnaroundTime;
     }
 
     public LocalDateTime getSubmitDateTime() {
@@ -25,25 +25,25 @@ public class Issue {
         this.submitDateTime = submitDateTime;
     }
 
-    public double getTurnAroundTimeInHours() {
-        return turnAroundTime.getTurnaroundTimeInHours();
+    public double getTurnaroundTimeInHours() {
+        return turnaroundTime.getTurnaroundTimeInHours();
     }
 
-    public long getTurnAroundTimeInSeconds() {
-        return turnAroundTime.getTurnaroundTimeInSeconds();
+    public long getTurnaroundTimeInSeconds() {
+        return turnaroundTime.getTurnaroundTimeInSeconds();
     }
 
-    public long getTurnAroundTimeInMillis() {
-        return turnAroundTime.getTurnaroundTimeInMillis();
+    public long getTurnaroundTimeInMillis() {
+        return turnaroundTime.getTurnaroundTimeInMillis();
     }
 
-    public void setTurnAroundTime(TurnAroundTime turnAroundTime) {
-        Objects.requireNonNull(turnAroundTime,"Turnaround time must not be null!");
-        this.turnAroundTime = turnAroundTime;
+    public void setTurnaroundTime(TurnaroundTime turnaroundTime) {
+        Objects.requireNonNull(turnaroundTime,"Turnaround time must not be null!");
+        this.turnaroundTime = turnaroundTime;
     }
 
     @Override
     public String toString() {
-        return submitDateTime.toString() + "\n" + turnAroundTime.toString();
+        return submitDateTime.toString() + "\n" + turnaroundTime.toString();
     }
 }

@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="854373e0-bb7e-49b2-afdb-2cee393db195" name="Changes" comment="refactor variable2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DueDateTimeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DueDateTimeCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/TurnAroundTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/TurnaroundTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DueDateTimeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DueDateTimeCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entities/IssueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/entities/IssueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/entities/TurnAroundTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/entities/TurnaroundTimeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +93,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TurnAroundTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TurnaroundTimeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="duedatetimecalculator" />
       <extension name="coverage">
         <pattern>
@@ -99,7 +102,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="entities" />
-      <option name="MAIN_CLASS_NAME" value="entities.TurnAroundTimeTest" />
+      <option name="MAIN_CLASS_NAME" value="entities.TurnaroundTimeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,7 +114,7 @@
         <item itemvalue="JUnit.DueDateTimeCalculatorTest" />
         <item itemvalue="JUnit.DueDateTimeCalculatorTest.testDueNextWeek1" />
         <item itemvalue="JUnit.DueDateTimeCalculatorTest.testDueNextWeek" />
-        <item itemvalue="JUnit.TurnAroundTimeTest" />
+        <item itemvalue="JUnit.TurnaroundTimeTest" />
       </list>
     </recent_temporary>
   </component>
