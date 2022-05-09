@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="854373e0-bb7e-49b2-afdb-2cee393db195" name="Changes" comment="refactor variable2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DueDateTimeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DueDateTimeCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DueDateTimeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DueDateTimeCalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DueDateTimeCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="duedatetimecalculator" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DueDateTimeCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DueDateTimeCalculatorTest.testDueNextWeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="duedatetimecalculator" />
       <option name="PACKAGE_NAME" value="" />
@@ -69,27 +80,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DueDateTimeCalculatorTest.testLongWork" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DueDateTimeCalculatorTest.testDueNextWeek1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="duedatetimecalculator" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DueDateTimeCalculatorTest" />
-      <option name="METHOD_NAME" value="testLongWork" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SubmitDateTimeTest.testSetToNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="duedatetimecalculator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="entities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="entities" />
-      <option name="MAIN_CLASS_NAME" value="entities.SubmitDateTimeTest" />
-      <option name="METHOD_NAME" value="testSetToNull" />
+      <option name="METHOD_NAME" value="testDueNextWeek1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,10 +108,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in duedatecalculator" />
+        <item itemvalue="JUnit.DueDateTimeCalculatorTest" />
+        <item itemvalue="JUnit.DueDateTimeCalculatorTest.testDueNextWeek1" />
         <item itemvalue="JUnit.DueDateTimeCalculatorTest.testDueNextWeek" />
         <item itemvalue="JUnit.TurnAroundTimeTest" />
-        <item itemvalue="JUnit.SubmitDateTimeTest.testSetToNull" />
-        <item itemvalue="JUnit.DueDateTimeCalculatorTest.testLongWork" />
       </list>
     </recent_temporary>
   </component>

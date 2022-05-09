@@ -39,53 +39,6 @@ public class DueDateTimeCalculatorTest {
     }
 
     @Test
-    public void testWeekend1() {
-        Issue issue = new Issue(submitDateTime, turnAroundTime1);
-        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        assertFalse(dueDateTimeCalculator.isWeekend(issue.getSubmitDateTime()));
-    }
-
-    @Test
-    public void testWeekend2() {
-        Issue issue = new Issue(submitDateTime, turnAroundTime1);
-        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        submitDateTime.setSubmitDateTime(submitDateTime.getSubmitDateTime().plusDays(4));
-        assertTrue(dueDateTimeCalculator.isWeekend(submitDateTime.getSubmitDateTime()));
-    }
-
-    @Test
-    public void testWorkingTime1() {
-        Issue issue = new Issue(submitDateTime, turnAroundTime1);
-        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        assertTrue(dueDateTimeCalculator.isWorkingTime(issue.getSubmitDateTime()));
-    }
-
-    @Test
-    public void testWorkingTime2() {
-        Issue issue = new Issue(submitDateTime, turnAroundTime2);
-        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        submitDateTime = new SubmitDateTime(submitDateTime.getSubmitDateTime().plusHours(2));
-        assertFalse(dueDateTimeCalculator.isWorkingTime(submitDateTime.getSubmitDateTime()));
-    }
-
-    @Test
-    public void testMorningOfNextWorkday() {
-        Issue issue = new Issue(submitDateTime, turnAroundTime2);
-        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        submitDateTime = dueDateTimeCalculator.calculateSubmitDateTimeOfMorningOfNextWorkday(submitDateTime.getSubmitDateTime());
-        assertThat(submitDateTime.getSubmitDateTime() ,equalTo(LocalDateTime.of(2022,Month.APRIL,27,9,0)));
-    }
-
-    @Test
-    public void testMorningOfNextWorkdayWeekend() {
-        SubmitDateTime submitDateTimeFriday = new SubmitDateTime(submitDateTime.getSubmitDateTime().plusDays(3));
-        Issue issue = new Issue(submitDateTimeFriday, turnAroundTime2);
-        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        submitDateTimeFriday = dueDateTimeCalculator.calculateSubmitDateTimeOfMorningOfNextWorkday(submitDateTimeFriday.getSubmitDateTime());
-        assertThat(submitDateTimeFriday.getSubmitDateTime(),equalTo(LocalDateTime.of(2022,Month.MAY,2,9,0)));
-    }
-
-    @Test
     public void testSubmitDateTimeOutsideWorkingHours() {
         submitDateTime = new SubmitDateTime(submitDateTime.getSubmitDateTime().plusHours(2));
         Issue issue = new Issue(submitDateTime, turnAroundTime1);
@@ -98,7 +51,6 @@ public class DueDateTimeCalculatorTest {
     public void testDueToday() {
         Issue issue = new Issue(submitDateTime, turnAroundTime1);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        assertTrue(dueDateTimeCalculator.isDueToday(issue));
         DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusHours(1)));
     }
@@ -107,7 +59,6 @@ public class DueDateTimeCalculatorTest {
     public void testDueTomorrow() {
         Issue issue = new Issue(submitDateTime, turnAroundTime2);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
-        assertFalse(dueDateTimeCalculator.isDueToday(issue));
         DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusHours(18)));
     }
@@ -122,12 +73,31 @@ public class DueDateTimeCalculatorTest {
     }
 
     @Test
-    public void testDueNextWeek() {
+    public void testDueNextWeek1() {
+        TurnAroundTime turnAroundTime = new TurnAroundTime(39);
+        Issue issue = new Issue(submitDateTime, turnAroundTime);
+        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
+        assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusWeeks(1).plusHours(-1)));
+    }
+
+    @Test
+    public void testDueNextWeek2() {
         TurnAroundTime turnAroundTime = new TurnAroundTime(41);
         Issue issue = new Issue(submitDateTime, turnAroundTime);
         DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
         DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
         assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusWeeks(1).plusHours(1)));
+    }
+
+    @Test
+    public void testDueNextWeek3() {
+        submitDateTime = new SubmitDateTime(submitDateTime.getSubmitDateTime().plusDays(3));
+        TurnAroundTime turnAroundTime = new TurnAroundTime(8);
+        Issue issue = new Issue(submitDateTime, turnAroundTime);
+        DueDateTimeCalculator dueDateTimeCalculator = new DueDateTimeCalculator(issue);
+        DueDateTime dueDateTime = dueDateTimeCalculator.calculateDueDateTime(issue);
+        assertThat(dueDateTime.getDueDate(),equalTo(submitDateTime.getSubmitDateTime().plusDays(3)));
     }
 
     @Test
